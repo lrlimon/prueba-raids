@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   #get 'pages/batman-vs-superman'
   get "batman-vs-superman", to: "pages#batman-vs-superman", as: :batmanvssuperman
 
+  resources :votes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

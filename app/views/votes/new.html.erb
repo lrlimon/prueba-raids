@@ -1,0 +1,23 @@
+<%= simple_form_for(@vote) do |f| %>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-5">
+      <%= f.input :hero, :label => "Hero", placeholder: "Hero", :hint => "Batman or Superman" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-5">
+      <%= f.input :email, :label => "email" placeholder: "Email", :hint => "your e-mail" %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="actions">
+    <%= f.button :submit, class: "btn btn-success btn-sm" do %>
+      <span class="glyphicon glyphicon-ok"></span> Vote
+    <% end %>
+  </div>
+<% end %>

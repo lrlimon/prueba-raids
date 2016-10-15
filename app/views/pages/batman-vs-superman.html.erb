@@ -12,4 +12,75 @@
       <% end %>
     </div>
   </div>
+
+  <br>
+  <!--div class="row">
+    <div class="col-sm-6">
+      <%= link_to new_vote_path, class: "btn btn-success btn-md" do %>
+        <span class="glyphicon glyphicon-hand-left"></span> Vote for Batman
+      <% end %>
+    </div>
+
+    <div class="col-sm-6">
+      <%= link_to new_vote_path, class: "btn btn-success btn-md" do %>
+        <span class="glyphicon glyphicon-hand-left"></span> Vote for Superman
+      <% end %>
+    </div>
+  </div-->
+
+  <!--div class="row">
+    <div class="col-sm-4">
+      <form action="/vote/new" method="GET">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="email" name="email" value="<%= params[:email] %>">
+          <%= hidden_field_tag(:hero, "Batman") %>
+        </div>
+        <button type="submit" class="btn btn-info glyphicon glyphicon-hand-left"> Vote</button>
+      </form>
+    </div>
+
+    <div class="col-sm-offset-2 col-sm-4">
+      <form action="/vote/new" method="GET">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="email" name="email" value="<%= params[:email] %>">
+          <%= hidden_field_tag(:hero, "Superman") %>
+        </div>
+        <button type="submit" class="btn btn-info glyphicon glyphicon-hand-left"> Vote</button>
+      </form>
+    </div>
+  </div-->
+
+  <div class="row">
+    <div class="col-sm-offset-1 col-sm-4">
+      <%= simple_form_for(:votes) do |f| %>
+        <div class="row">
+          <div class="col-md-4">
+            <%= f.input :email, :label => "email", placeholder: "Email", :hint => "Your e-mail" %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= f.button :submit, class: "btn btn-success btn-sm" do %>
+            <span class="glyphicon glyphicon-ok"></span> Vote for Batman
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-sm-offset-2 col-sm-4">
+      <%= simple_form_for(:votes) do |f| %>
+        <div class="row">
+          <div class="col-md-4">
+            <%= f.input :email, :label => "email", placeholder: "Email", :hint => "Your e-mail" %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= f.button :submit, class: "btn btn-success btn-sm" do %>
+            <span class="glyphicon glyphicon-ok"></span> Vote for Superman
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
