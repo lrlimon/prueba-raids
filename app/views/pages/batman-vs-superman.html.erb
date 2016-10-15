@@ -1,19 +1,21 @@
 <div class="container-fluid">
+  <hr>
+
   <div class="row">
     <div class="col-sm-6">
       <%= link_to batman_path do %>
-        <img class="imagen" src="<%= image_path("batman.jpg") %>" alt="" />
+        <img class="imagen" src="<%= image_path("batman2.jpg") %>" alt="" />
       <% end %>
     </div>
 
     <div class="col-sm-6">
       <%= link_to superman_path do %>
-        <img class="imagen" src="<%= image_path("superman.jpg") %>" alt="" />
+        <img class="imagen" src="<%= image_path("superman2.jpg") %>" alt="" />
       <% end %>
     </div>
   </div>
 
-  <br>
+  <hr>
   <!--div class="row">
     <div class="col-sm-6">
       <%= link_to new_vote_path, class: "btn btn-success btn-md" do %>
@@ -51,34 +53,38 @@
   </div-->
 
   <div class="row">
-    <div class="col-sm-offset-1 col-sm-4">
-      <%= simple_form_for(:votes) do |f| %>
-        <div class="row">
-          <div class="col-md-4">
-            <%= f.input :email, :label => "email", placeholder: "Email", :hint => "Your e-mail" %>
-          </div>
+    <div class="col-md-offset-1 col-md-4">
+      <%= simple_form_for(:vote, :url => { :controller => "votes", :action => "create", :method => "get" }) do |f| %>
+        <div class="col-md-12">
+          <%= f.input :email, :label => "Subscribe by Batman", placeholder: "Email", required: false %>
         </div>
 
-        <div class="actions">
-          <%= f.button :submit, class: "btn btn-success btn-sm" do %>
-            <span class="glyphicon glyphicon-ok"></span> Vote for Batman
-          <% end %>
+        <div class="col-md-12">
+          <%= f.hidden_field :hero, :value => "Batman", required: false %>
+        </div>
+
+        <div class="col-md-offset-7">
+          <div class="actions">
+            <%= f.button :submit, "Vote for Batman", class: "btn btn-success btn-md" %>
+          </div>
         </div>
       <% end %>
     </div>
 
-    <div class="col-sm-offset-2 col-sm-4">
-      <%= simple_form_for(:votes) do |f| %>
-        <div class="row">
-          <div class="col-md-4">
-            <%= f.input :email, :label => "email", placeholder: "Email", :hint => "Your e-mail" %>
-          </div>
+    <div class="col-md-offset-2 col-md-4">
+      <%= simple_form_for(:vote, :url => { :controller => "votes", :action => "create", :method => "get" }) do |f| %>
+        <div class="col-md-12">
+          <%= f.input :email, :label => "Subscribe by Superman", placeholder: "Email", required: false %>
         </div>
 
-        <div class="actions">
-          <%= f.button :submit, class: "btn btn-success btn-sm" do %>
-            <span class="glyphicon glyphicon-ok"></span> Vote for Superman
-          <% end %>
+        <div class="col-md-12">
+          <%= f.hidden_field :hero, :value => "Superman", required: false %>
+        </div>
+
+        <div class="col-md-offset-7">
+          <div class="actions">
+            <%= f.button :submit, "Vote for Superman", class: "btn btn-success btn-md" %>
+          </div>
         </div>
       <% end %>
     </div>

@@ -4,8 +4,13 @@ class VotesController < ApplicationController
   end
 
   def create
-    @vote = Vote.new(product_params)
-    return redirect_to votes_path if @vote.save
+    @vote = Vote.new(vote_params)
+    #return redirect_to votes_path if @vote.save
+    return redirect_to batmanvssuperman_path if @vote.save
     render :new
+  end
+
+  def vote_params
+    params.require(:vote).permit(:hero, :email)
   end
 end
