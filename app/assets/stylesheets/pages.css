@@ -8,8 +8,15 @@ html {
 
 h1 {
   text-align: center;
+  background-color: rgba(128 , 128, 128, 0.1);
 }
 
 h1.superman {
-  color: white;
+  /* color: white; */
+}
+
+.imagen {
+  /* margin: 0px;
+  padding: 0px; */
+  width: 100%;
 }

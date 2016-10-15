@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  root 'pages#batman'
+
+  root 'pages#batman-vs-superman'
 
   #get 'pages/superman'
   get "batman", to: "pages#batman", as: :batman
   #get 'pages/batman'
   get "superman", to: "pages#superman", as: :superman
+  #get 'pages/batman-vs-superman'
+  get "batman-vs-superman", to: "pages#batman-vs-superman", as: :batmanvssuperman
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

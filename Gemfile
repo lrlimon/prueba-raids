@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+# simple form
+gem 'simple_form', '~> 3.1.0'
+
+# bootstrap-sass
+gem 'bootstrap-sass', '~> 3.3.6'
+
+# Backstretch
 gem 'backstretch-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
