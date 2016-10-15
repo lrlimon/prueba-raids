@@ -13,7 +13,7 @@ gem 'backstretch-rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
-gem 'pg', '~> 0.15'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
